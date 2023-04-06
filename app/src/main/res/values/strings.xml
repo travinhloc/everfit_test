@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Everfit-Test</string>
+    <string name="ok">OK</string>
+    <string name="error_generic">Unexpected error</string>
+    <string name="error_something_wrong">Something went wrong. Please try again later!</string>
+    <string name="des_no_internet">No internet connection found.\nPlease check your connection and try again.</string>
+    <string name="completed">Completed</string>
+    <string name="exercises">"%d exercises"</string>
+    <string name="exercises_missed">" • %d exercises"</string>
+    <string name="missed">Missed</string>
+</resources>

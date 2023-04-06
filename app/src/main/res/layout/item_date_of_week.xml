@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="dateOfWeek"
+            type="com.everfittest.android.domain.model.DayOfWeek" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/sdp_10"
+        app:isSelect="@{dateOfWeek.currentDay}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llDate"
+            android:layout_width="@dimen/sdp_60"
+            android:layout_height="@dimen/sdp_50"
+            android:layout_marginTop="@dimen/sdp_5"
+            app:layout_constraintTop_toTopOf="@+id/rvAssignment"
+            android:layout_marginBottom="@dimen/sdp_16"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDayOfWeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textAllCaps="true"
+                app:isSelect="@{dateOfWeek.currentDay}"
+                android:fontFamily="@font/open_sans_bold"
+                android:textColor="@color/text_secondary"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tvDate"
+                android:textSize="@dimen/ssp_13"
+                tools:text="MON" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:fontFamily="@font/open_sans_regular"
+                android:textColor="@color/text_black"
+                app:layout_constraintTop_toBottomOf="@+id/tvDayOfWeek"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="@dimen/ssp_16"
+                tools:text="20" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAssignment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:minHeight="@dimen/sdp_70"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/llDate"
+            app:layout_constraintBottom_toTopOf="@+id/line"
+            android:layout_marginBottom="@dimen/sdp_10"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_assignment"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:orientation="vertical" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_0_75"
+            android:background="@color/elevation"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

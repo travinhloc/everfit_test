@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="assignment"
+            type="com.everfittest.android.domain.model.data.Assignment" />
+
+        <variable
+            name="dateOfWeek"
+            type="com.everfittest.android.domain.model.DayOfWeek" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        assignment="@{assignment}"
+        dateOfWeek="@{dateOfWeek}"
+        checkEmptyItem="@{assignment}"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sdp_60"
+        android:layout_marginVertical="@dimen/sdp_4"
+        app:cardBackgroundColor="@color/gray"
+        app:cardCornerRadius="@dimen/sdp_8"
+        app:cardElevation="@dimen/sdp_0"
+        app:cardUseCompatPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rootView"
+            android:layout_width="match_parent"
+            style="@style/SelectableItemBackground"
+            enableExercirse="@{dateOfWeek}"
+            android:layout_height="@dimen/sdp_60"
+            android:paddingStart="@dimen/spacing_normal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                assignmentOfText="@{assignment}"
+                dateOfWeekOfText="@{dateOfWeek}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="@{assignment.title}"
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/ssp_15"
+                android:layout_marginEnd="@dimen/sdp_16"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintBottom_toTopOf="@+id/tvExercises"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imgTick"
+                tools:text="AAAA" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMissed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_regular"
+                android:maxLines="1"
+                dateOfWeekOfMissedText="@{dateOfWeek}"
+                assignmentOfMissedText="@{assignment}"
+                android:text="@string/missed"
+                android:textColor="@color/red"
+                android:visibility="gone"
+                android:textSize="@dimen/ssp_13"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvExercises"
+                assignmentOfSubText="@{assignment}"
+                dateOfWeekOfSubText="@{dateOfWeek}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_regular"
+                android:maxLines="1"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/ssp_13"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvMissed"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                tools:text="@string/exercises_missed" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgTick"
+                android:layout_width="@dimen/sdp_25"
+                android:layout_height="@dimen/sdp_25"
+                android:layout_marginEnd="@dimen/sdp_16"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_tick"
+                android:visibility="@{assignment.selected ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

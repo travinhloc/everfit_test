@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--ref: https://developer.android.com/reference/android/R.integer.html-->
+    <integer name="config_shortAnimTime">150</integer>
+    <integer name="config_mediumAnimTime">300</integer>
+    <integer name="config_longAnimTime">400</integer>
+    <integer name="inputMethod_PersonalName">8192</integer>
+    <integer name="inputMethod_MultipleLine">0x00020000</integer>
+</resources>

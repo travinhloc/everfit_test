@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">@color/blue</color>
+    <color name="colorPrimaryAlpha10">@color/blue_10</color>
+    <color name="colorSecondary">@color/textSecondary</color>
+
+
+    <color name="text_dark">@color/dark</color>
+    <color name="text_dark1">#1E0A3C</color>
+    <color name="textSecondary">#7B7E91</color>
+    <color name="textSecondary_2">#171717</color>
+
+    <color name="textSelected">#7470EF</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="black">#FF000000</color>
+    <color name="black_50">#80000000</color>
+    <color name="black_20">#33000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="white_20">#40FFFFFF</color>
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="elevation">#D8D8D8</color>
+
+    <color name="blue">#1240C0</color>
+    <color name="blue_95">#f21240C0</color>
+    <color name="blue_50">#801240C0</color>
+    <color name="blue_10">#1a1240C0</color>
+
+    <color name="dark">#131313</color>
+    <color name="dark_80">#cc131313</color>
+    <color name="dark_50">#80131313</color>
+    <color name="dark_40">#66131313</color>
+    <color name="dark_20">#40131313</color>
+    <color name="dark_10">#1a131313</color>
+
+    <color name="gray">#F7F8FC</color>
+    <color name="gray_1">#7B7E91</color>
+    <color name="gray_2">#8F92A1</color>
+
+    <color name="red">#FF5E5E</color>
+    <color name="red_50">#80FF5E5E</color>
+
+    <!-- Story Display Progress-->
+    <color name="gray_scale">#8AFFFFFF</color>
+    <color name="progress_primary">@color/blue</color>
+    <color name="progress_secondary">@color/gray_scale</color>
+    <color name="progress_max_active">@color/blue</color>
+
+</resources>
